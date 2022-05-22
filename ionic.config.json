@@ -1,0 +1,8 @@
+{
+  "name": "docker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "2f74a47c"
+}

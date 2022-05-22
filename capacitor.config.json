@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "docker",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
