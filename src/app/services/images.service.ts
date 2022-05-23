@@ -1,15 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Image } from '../classes/image';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagesService {
   apiUrl: string = environment.dockerApi
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllimages() {
+  getAllImages() {
     let url = this.apiUrl + '/images/json' //get
+    return this.http.get<Image[]>(url)
   }
 
   getImage(Id: string) {
@@ -18,9 +21,11 @@ export class ImagesService {
 
   deleteImage(name: string) {
     let url = this.apiUrl + `/images/${name}` //delete
+    return this.http.delete<any>(url)
   }
 
-  createImage() {
+  createImage(image: Image) {
     let url = this.apiUrl + `/images/create` //post
+    return this.http.post<any>(url, image)
   }
 }
