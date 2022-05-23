@@ -1,9 +1,7 @@
-
-
-export interface createContainer {
+export interface CreateContainer {
     Hostname: string;
     Domainname: string;
     Image: string;
-    ExposedPorts: any;
+    ExposedPorts?: any;
 }
 

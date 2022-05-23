@@ -58,80 +58,81 @@ export interface Docker {
     InitCommit: InitCommit
     SecurityOptions: string[]
     Warnings: string[]
-}
-
-export interface Plugins {
+  }
+  
+  export interface Plugins {
     Volume: string[]
     Network: string[]
     Authorization: any
     Log: string[]
-}
-
-export interface RegistryConfig {
+  }
+  
+  export interface RegistryConfig {
     AllowNondistributableArtifactsCIDRs: any[]
     AllowNondistributableArtifactsHostnames: any[]
     InsecureRegistryCIDRs: string[]
     IndexConfigs: IndexConfigs
     Mirrors: any[]
-}
-
-export interface IndexConfigs {
+  }
+  
+  export interface IndexConfigs {
     "docker.io": DockerIo
     "hubproxy.docker.internal:5000": HubproxyDockerInternal5000
-}
-
-export interface DockerIo {
+  }
+  
+  export interface DockerIo {
     Name: string
     Mirrors: any[]
     Secure: boolean
     Official: boolean
-}
-
-export interface HubproxyDockerInternal5000 {
+  }
+  
+  export interface HubproxyDockerInternal5000 {
     Name: string
     Mirrors: any[]
     Secure: boolean
     Official: boolean
-}
-
-export interface Runtimes {
+  }
+  
+  export interface Runtimes {
     "io.containerd.runc.v2": IoContainerdRuncV2
     "io.containerd.runtime.v1.linux": IoContainerdRuntimeV1Linux
     runc: Runc
-}
-
-export interface IoContainerdRuncV2 {
+  }
+  
+  export interface IoContainerdRuncV2 {
     path: string
-}
-
-export interface IoContainerdRuntimeV1Linux {
+  }
+  
+  export interface IoContainerdRuntimeV1Linux {
     path: string
-}
-
-export interface Runc {
+  }
+  
+  export interface Runc {
     path: string
-}
-
-export interface Swarm {
+  }
+  
+  export interface Swarm {
     NodeID: string
     NodeAddr: string
     LocalNodeState: string
     ControlAvailable: boolean
     Error: string
     RemoteManagers: any
-}
-
-export interface ContainerdCommit {
+  }
+  
+  export interface ContainerdCommit {
     ID: string
     Expected: string
-}
-
-export interface RuncCommit {
+  }
+  
+  export interface RuncCommit {
     ID: string
     Expected: string
-}
-
-export interface InitCommit {
+  }
+  
+  export interface InitCommit {
     ID: string
     Expected: string
-}
+  }
+  

@@ -18,4 +18,40 @@
       <ion-spinner name="crescent"></ion-spinner>
     </div>
   </div>
+  <div *ngIf="!isLoading && dockerInfo && dockerVersion">
+    <ion-list>
+      <ion-item>
+        <ion-label>Plataforma</ion-label>
+        <ion-note slot="end">{{dockerVersion.Platform.Name}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Versão</ion-label>
+        <ion-note slot="end">{{dockerVersion.Version}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Versão da API</ion-label>
+        <ion-note slot="end">{{dockerVersion.ApiVersion}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Arquitetura</ion-label>
+        <ion-note slot="end">{{dockerVersion.Arch}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data da Versão</ion-label>
+        <ion-note slot="end">{{dockerVersion.BuildTime | date}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>SO</ion-label>
+        <ion-note slot="end">{{dockerInfo.OperatingSystem}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Containers</ion-label>
+        <ion-note slot="end">{{dockerInfo.Containers}}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Imagens</ion-label>
+        <ion-note slot="end">{{dockerInfo.Images}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
